@@ -1,0 +1,63 @@
+Create a directory called ""my_folder"", navigate into it, and create a file named ""my_file.txt"" with some text. Then, create another file named ""another_file.txt"" with some text. Concatenate the content of ""another_file.txt"" to ""my_file.txt"" and display the updated content. Finally, list all files and directories in the current directory.
+Create 20 files with .txt extensions and rename the first 5 files to .yml extension and Print the latest created top 5 files among the total no of files".
+
+Techstacks needs to be used : 
+
+Shell (AWS, Gitbash, WSL, Vbox)
+
+
+
+pallavi@MYWORLD:~$ mkdir myfolder
+pallavi@MYWORLD:~$ l
+P1  myfolder/
+pallavi@MYWORLD:~$ ls
+P1  myfolder
+pallavi@MYWORLD:~$ echo "Today" >> my_file.txt
+pallavi@MYWORLD:~$ ls
+P1  my_file.txt  myfolder
+pallavi@MYWORLD:~$ echo "is" >> another_file.txt
+pallavi@MYWORLD:~$ ls
+P1  another_file.txt  my_file.txt  myfolder
+pallavi@MYWORLD:~$ cat another_.txt >> my_file.txt
+cat: another_.txt: No such file or directory
+pallavi@MYWORLD:~$ cat another_file.txt >> my_file.txt
+pallavi@MYWORLD:~$ ls
+P1  another_file.txt  my_file.txt  myfolder
+pallavi@MYWORLD:~$ cat my_file.txt
+Today
+is
+pallavi@MYWORLD:~$ touch file1.txt
+pallavi@MYWORLD:~$ ls
+P1  another_file.txt  file1.txt  my_file.txt  myfolder
+pallavi@MYWORLD:~$ touch file{2..20}
+pallavi@MYWORLD:~$ ls
+P1                file1.txt  file11  file13  file15  file17  file19  file20  file4  file6  file8  my_file.txt
+another_file.txt  file10     file12  file14  file16  file18  file2   file3   file5  file7  file9  myfolder
+pallavi@MYWORLD:~$ mv file1.txt file1.yml
+pallavi@MYWORLD:~$ ls
+P1                file1.yml  file11  file13  file15  file17  file19  file20  file4  file6  file8  my_file.txt
+another_file.txt  file10     file12  file14  file16  file18  file2   file3   file5  file7  file9  myfolder
+pallavi@MYWORLD:~$ mv file2 file2.yml
+pallavi@MYWORLD:~$ ls
+P1                file1.yml  file11  file13  file15  file17  file19     file20  file4  file6  file8  my_file.txt
+another_file.txt  file10     file12  file14  file16  file18  file2.yml  file3   file5  file7  file9  myfolder
+pallavi@MYWORLD:~$ touch file{3..20}.yml
+pallavi@MYWORLD:~$ ls
+P1                file10.yml  file12.yml  file14.yml  file16.yml  file18.yml  file20      file4      file6      file8      my_file.txt
+another_file.txt  file11      file13      file15      file17      file19      file20.yml  file4.yml  file6.yml  file8.yml  myfolder
+file1.yml         file11.yml  file13.yml  file15.yml  file17.yml  file19.yml  file3       file5      file7      file9
+file10            file12      file14      file16      file18      file2.yml   file3.yml   file5.yml  file7.yml  file9.yml
+pallavi@MYWORLD:~$ ls | head -n6
+P1
+another_file.txt
+file1.yml
+file10
+file10.yml
+file11
+pallavi@MYWORLD:~$  ls | tail -n5
+file8.yml
+file9
+file9.yml
+my_file.txt
+myfolder
+pallavi@MYWORLD:~$
